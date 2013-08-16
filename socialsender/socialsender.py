@@ -9,11 +9,11 @@ sender = 'banksps@gmail.com'
 recipient = 'phillip@banksnetworking.com'
 subj = sys.argv[1]
 body = ""
-user = sys.argv[2]
-pass = sys.argv[3]
+guser = sys.argv[2]
+gpass = sys.argv[3]
 
 
-def email(eaddr,subj,attch,body,user,pass):
+def email(eaddr,subj,attch,body):
 
     "Sends an e-mail to the specified recipient."
  
@@ -31,7 +31,7 @@ def email(eaddr,subj,attch,body,user,pass):
     session.ehlo()
     session.starttls()
     session.ehlo
-    session.login(user,pass)
+    session.login(guser,gpass)
     session.sendmail(sender, recipient, headers + "\r\n\r\n" + body)
     session.quit()
 
