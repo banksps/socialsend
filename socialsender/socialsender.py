@@ -2,7 +2,9 @@
 #written by Phillip Banks Sr.
 
 import smtplib, sys, os
+import networks
 
+#command line input socialsender [subject,attach,gmail_user,gmail_pass)
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 sender = 'banksps@gmail.com'
@@ -14,13 +16,11 @@ gpass = sys.argv[3]
 
 
 def email(eaddr,subj,attch,body):
-
     "Sends an e-mail to the specified recipient."
- 
     body = "" + body + ""
  
     headers = ["From: " + sender,
-           "Subject: " + subject,
+           "Subject: " + subj,
            "To: " + recipient,
            "MIME-Version: 1.0",
            "Content-Type: text/html"]
@@ -34,6 +34,7 @@ def email(eaddr,subj,attch,body):
     session.login(guser,gpass)
     session.sendmail(sender, recipient, headers + "\r\n\r\n" + body)
     session.quit()
+
 
     
 #Acquire the file
