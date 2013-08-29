@@ -1,5 +1,7 @@
 # Send Facebook
 
+def facebook (eaddr,subj,attch,body):
+    email (eaddr, subj,attch,body)
 
 # Send Twitter
 

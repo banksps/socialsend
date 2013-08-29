@@ -38,9 +38,10 @@ def email(eaddr,subj,attch,body):
 
     
 #Acquire the file
+newstuff = os.walk('.')
 
-
-#Destinguish what type of file it is
+#  what type of file it is
+for i in newstuff()
 
 #Are there any associated files
 
@@ -51,5 +52,5 @@ def email(eaddr,subj,attch,body):
 
 #Send to relevant networks from folders and move content for archiving
 	#If there is an error report, send log and stop processing
-	
+
 #Save log and move to logs folder
